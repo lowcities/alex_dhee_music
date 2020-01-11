@@ -13,23 +13,14 @@ p{
 /*******************************************
 MAIN ELEMENT STYLES
 *******************************************/
+
+header {
+  position: relative;
+}
+
 .wrapper {
-    left: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  margin: 0;
-  width: 100%;
-  -webkit-box-align: start;
-    -ms-flex-align: start;
-      align-items: flex-start;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1
+  left: 0;
+  height: 100%;
 }
 
 footer {
@@ -44,18 +35,60 @@ HEADER STYLE
 *******************************************/
 
 .main-banner {
-    background: linear-gradient(to bottom, transparent, white 90% );
+    
+    padding: 0;
     position: relative;
     display:inline-block;
     text-align: center;
-    
+    animation: opaque 5s ease;
 }
 
+@keyframes opaque {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: .1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
 .header-img {
+    background: linear-gradient(to bottom, transparent, white 90% ), url("https://images.pexels.com/photos/66997/pexels-photo-66997.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")center no-repeat;
+    background-size: cover;
     position: relative;
     margin: 0 auto;
+    height: 20em;
     width: 100%;
     z-index: -1;
+}
+
+.alex {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url('../img/alex_shred2.png') no-repeat top;
+  background-size: 300px;
+  opacity: 0;
+  padding-top: 40em;
+  height: auto;
+  width: 100%;
+  animation: disolve 5s ease-out;
+}
+
+@keyframes disolve {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .title {
@@ -63,7 +96,8 @@ HEADER STYLE
     position: absolute;
     top: 50%;
     left: 50%;
-    padding: 1rem;
+    width: 90%;
+    padding: .2rem;
     transform: translate(-50%, -50%);
     z-index: 1;
 }
@@ -73,11 +107,31 @@ MOBILE NAVIGATION STYLE
 *******************************************/
 
 .navbar {
-    background: transparent;
-    position: absolute;
-    top: 0;
-    width: 100%;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
+.navbar-nav {
+  background-color: green;
+}
+
+.navbar-brand {
+  font-weight: bolder;
+  padding-top: .9rem;
+}
+
+/*******************************************
+BIO STYLE
+*******************************************/
+.bio {
+  margin: 2rem 0;;
+  position: relative;
+  
+}
+
+
+
 
 /*******************************************
 FOOTER STYLE
