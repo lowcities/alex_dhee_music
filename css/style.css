@@ -14,6 +14,12 @@ p{
 MAIN ELEMENT STYLES
 *******************************************/
 
+a {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
 header {
   position: relative;
 }
@@ -39,7 +45,7 @@ HEADER STYLE
     padding: 0;
     position: relative;
     display:inline-block;
-    text-align: center;
+    /* text-align: center; */
     animation: opaque 5s ease;
 }
 
@@ -55,11 +61,11 @@ HEADER STYLE
   }
 }
 
-
 .header-img {
     background: linear-gradient(to bottom, transparent, white 90% ), url("https://images.pexels.com/photos/66997/pexels-photo-66997.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")center no-repeat;
     background-size: cover;
-    position: relative;
+    position: absolute;
+    top: 0;
     margin: 0 auto;
     height: 20em;
     width: 100%;
@@ -93,12 +99,14 @@ HEADER STYLE
 
 .title {
     border: 1px solid;
-    position: absolute;
+    margin: 0 auto;
+    /* position: absolute;
     top: 50%;
-    left: 50%;
+    left: 50%; */
     width: 90%;
     padding: .2rem;
-    transform: translate(-50%, -50%);
+    /* transform: translate(-50%, -50%); */
+    text-align: center;
     z-index: 1;
 }
 
@@ -106,19 +114,74 @@ HEADER STYLE
 MOBILE NAVIGATION STYLE
 *******************************************/
 
-.navbar {
-  background: transparent;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-.navbar-nav {
-  background-color: green;
+.nav-button {
+  border: 10px black;
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  margin: 10px 0 0 3px;
+  position: relative;
+  z-index: 99;
 }
 
-.navbar-brand {
-  font-weight: bolder;
-  padding-top: .9rem;
+.nav-button span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: black;
+  /* border-radius: 9px; */
+  opacity: 1;
+  left: 25%;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+}
+
+.nav-button span:nth-child(1) {
+  top: 15px;
+}
+.nav-button span:nth-child(2),
+.-button span:nth-child(3) {
+  top: 25px;
+}
+.-button span:nth-child(4) {
+  top: 35px;
+}
+
+
+
+.sticky-nav-button {
+  background: rgba(10,6,6,.7);
+  box-shadow: 1px 1px 1px 3px #999;
+  position: fixed;
+  top: 0;
+  width: 20%;
+  z-index: 80;
+}
+
+.menu {
+  display: none;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+  z-index: 80;
+}
+
+.sticky-mobile {
+  background: rgba(10,6,6,.7);
+  color: #999;
+  position: fixed;
+  bottom: 0
+}
+
+.nav-item, .nav-logo {
+  box-shadow: inset 0 1px 0 #111, 0 2px 0 #666;
+  color: #999;
+  padding: 2px;
+  text-align: center;
 }
 
 /*******************************************
