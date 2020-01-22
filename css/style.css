@@ -4,10 +4,34 @@ FONTS
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
-h1,
+@font-face {
+  font-family: 'elemental_endregular';
+  src: url('/element-font/elemental_end-webfont.woff2') format('woff2'),
+       url('/element-font/elemental_end-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'blupurplregular';
+  src: url('/blupurp-font/blupurpl-personaluse-webfont.woff2') format('woff2'),
+       url('/blupurp-font/blupurpl-personaluse-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
 p{
     font-family: 'Montserrat', sans-serif;
+}
 
+h1,h3 {
+  font-family: 'blupurplregular', sans-serif;
+  letter-spacing: 3px;
+}
+
+h3 {
+  font-size: 3.5rem;
 }
 
 /*******************************************
@@ -25,7 +49,8 @@ header {
 }
 
 body {
-  
+  background: linear-gradient(to bottom, transparent, white 90% ), url("https://images.pexels.com/photos/66997/pexels-photo-66997.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")center;
+  background-size: cover;
 }
 
 .wrapper {
@@ -46,65 +71,98 @@ HEADER STYLE
 
 .main-banner {
     
-    padding: 0;
+    /* padding: 0;
     position: relative;
     display:inline-block;
     /* text-align: center; */
-    animation: opaque 5s ease;
-}
+    /* animation: opaque 5s ease;
+    z-index: 1;  */
 
-
-
-.header-img {
     background: linear-gradient(to bottom, transparent, white 90% ), url("https://images.pexels.com/photos/66997/pexels-photo-66997.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")center no-repeat;
     background-size: cover;
-    position: absolute;
+    position: relative;
     top: 0;
     margin: 0 auto;
-    height: 20em;
+    height: 13rem;
     width: 100%;
-    z-index: -1;
+    /* z-index: -1; */
 }
 
-.alex {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: url('../img/alex_shred2.png') no-repeat top;
-  background-size: 300px;
-  opacity: 0;
-  padding-top: 40em;
-  height: auto;
-  width: 100%;
-  animation: disolve 5s ease-out;
-}
-
-
-
-.title {
-    border: 1px solid;
+.header-img {
+    /* background: linear-gradient(to bottom, transparent, white 90% ), url("https://images.pexels.com/photos/66997/pexels-photo-66997.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")center no-repeat;
+    background-size: cover;
+    position: relative;
+    top: 0;
     margin: 0 auto;
-    /* position: absolute;
-    top: 50%;
-    left: 50%; */
-    width: 90%;
+    height: 15rem;
+    width: 100%;
+    z-index: -1; */
+}
+
+.alex1 {
+  position: absolute;
+  top: 60%;
+  right: -10px;
+  background: url('../img/alex_shred2.png') no-repeat top;
+  background-size: contain;
+  opacity: 1;
+  padding-top: 70%;
+  width: 50%;
+  z-index: 3;
+}
+
+.alex2 {
+  position: absolute;
+  top: 45%;
+  right: -30px;
+  background: url('../img/alex_shred2.png') no-repeat top;
+  background-size: contain;
+  opacity: 1;
+  padding-top: 70%;
+  width: 50%;
+  z-index: 1;
+}
+
+
+.first-letter {
+  background: linear-gradient(to bottom, rgb(249, 123, 6, 0.6), transparent), 
+  url('../img/gradient-dark-stripe-hz.png') center repeat-x;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 4.5rem;
+  font-weight: 900;
+  /* text-shadow: 0 5px 0 rgba(255, 255, 255, 0.4); */
+}
+.title {
+    border: 2px solid rgba(87, 44, 3, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+    text-shadow: 0 .9px 0 rgba(36, 15, 1, 0.4);
+    margin: 0 auto;
+    position: relative;
+    top: 25%;
     padding: .2rem;
     /* transform: translate(-50%, -50%); */
     text-align: center;
     transition: all 0.5s ease;
-    z-index: 1;
+    width: 60%;
+    z-index: 2;
 }
 
 .sticky-title {
   background-color:rgba(218, 121, 31, 0.9);
   border: none;
-  font-size: 2.5em;
+  font-size: .5em;
   /* margin-top: 10px; */
   position: fixed;
   top: 0;
-  left: 30px;
+  /* left: 30px; */
   text-align: center;
   width: 100%;
+  z-index: 98;
 }
 
 /*******************************************
@@ -116,8 +174,10 @@ MOBILE NAVIGATION STYLE
   display: inline-block;
   height: 50px;
   width: 50px;
-  margin: 10px 0 0 3px;
-  position: relative;
+  margin: 5px 0 0 3px;
+  position: absolute;
+  top: 0;
+  left: 0;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
@@ -127,18 +187,17 @@ MOBILE NAVIGATION STYLE
   -o-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
   cursor: pointer;
-  z-index: 99;
 }
 
 .nav-button span {
   display: block;
   position: absolute;
   height: 4px;
-  width: 50px;
+  width: 40px;
   background: black;
   /* border-radius: 9px; */
   opacity: 1;
-  left: 10%;
+  left: 10px;
   
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
@@ -193,28 +252,32 @@ MOBILE NAVIGATION STYLE
   margin: 0 auto;
   padding-top: 3.4rem;
   position: fixed;
-  top: 0;
-  width: 20%;
-  z-index: 80;
+  top: 1em;
+  left: 0;
+  width: 60px;
+  z-index: 99;
 }
 
 .sticky-nav-button span {
   background: whitesmoke;
+
 }
-
-
 
 .menu {
   display: flex;
   flex-direction: column;
+  font-family: 'blupurplregular', sans-serif;
+  font-size: 1.5rem;
+  position: relative;
   height: auto;
   width: 100%;
   overflow: hidden;
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
   visibility: hidden;
+  width: 100%;
   max-width: 0;
-  z-index: 80;
+  z-index: 99;
 }
 
 .menu-show {
@@ -231,35 +294,76 @@ MOBILE NAVIGATION STYLE
 
 .nav-item, .nav-logo {
   box-shadow: inset 0 1px 0 #111, 0 2px 0 #666;
+  
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
   color: black;
-  padding: 2px;
+  padding: 10px;
   text-align: center;
+}
+
+.nav-item a {
+  
+  text-decoration: none;
+}
+
+.nav-item {
+  
 }
 
 /*******************************************
 BIO STYLE
 *******************************************/
 .bio {
-  /* background: url('../img/alex_shred2.png') no-repeat; */
   background-size: contain;
   position: relative;
-  
 }
 
-.bio-clip {
-  /* background-color: rgba(10,6,6,.7); */
-  margin: 2em auto;
-  width: 90%;
+/* .float-invisible {
+  float: right;
+  width: 40%;
+  padding-top: 10em;
+} */
+
+.invisible-block {
+  float: right;
+  width: 40%;
+  padding-top: 10em;
+
+}
+
+.bio-clip1,
+.bio-clip2 {
+  position: relative;
+  z-index: 2;
+}
+
+.bio-clip1 {
+  display: block;
+  width: 100%;
+  /* background-color: rgba(218, 121, 31, 0.9); */
+  margin: 2em 0;
+  text-align: left;
+}
+
+.bio-clip2 {
+  display: inline-block;
 }
 
 .bio-pic {
-  background: url('../img/alex_shred2.png') no-repeat top;
+  background: url('../img/alex_shred2.png') no-repeat center;
   background-size: contain;
   background-attachment: fixed;
   margin: 2em 0;
-  padding-top: 10em;
+  padding-top: 20em;
 }
 
+.bio-pic2 {
+  display: inline-block;
+  background: url('../img/IMG_6857.JPG') no-repeat center;
+  background-size: cover;
+  width: 100%;
+  padding-top: 20em;
+}
 
 
 
@@ -367,11 +471,30 @@ FOOTER STYLE
 /*******************************************
   MEDIA QUERIES
 *******************************************/
+@media screen and ( max-width: 425px) {
+  .first-letter {
+    font-size: 3.5rem;
+  }
+
+  h3 {
+    font-size: 2.4rem;
+  }
+}
 
 @media screen and ( min-width: 767px ) {
 
+  .first-letter {
+    font-size: 6rem;
+  }
+
+  h3 {
+    font-size: 6rem;
+  }
+
   .title {
-    font-size: 7em;
+    margin-bottom: .3em;
+    width: 60%;
+    top: 20%;
   }
 
   .nav-button {
@@ -379,19 +502,59 @@ FOOTER STYLE
   }
 
   #menu {
+    /* background:rgba(218, 121, 31, 0.7); */
     display: flex;
     flex-direction: row;
     margin: 0 auto;
+    width: 80%;
+    z-index: 99;
   }
 
   .sticky-nav-bar {
     position: fixed;
     top: 0;
+    left: 10%;
   }
 
   .nav-item {
-    box-shadow: none;
+    background:rgba(218, 121, 31, 0.7);
+    box-shadow: 1px 2px 1px 1px rgba(0,0,0,0.3);
+    margin: 0 .3em;
+    padding: 0;
     width: 100%;
+  }
+
+  .nav-item:hover,
+  .active {
+    box-shadow: -5px 13.5px 8px -4px rgba(0,0,0,.2),  .5px 9px 0 rgba(102,102,102,1),   
+                      inset 0 -6px 0 rgba(0,0,0,0.3), 
+                      inset 0 2px 5px rgba(255,255,255,0.4), 0.5px 12px 5px rgba(0,0,0,1);
+  }
+
+  .invisible-block {
+    padding-top: 20em;
+  }
+
+  .bio-clip1 {
+    float: left;
+    width: 50%;
+  }
+
+  .bio-clip2 {
+    float: right;
+    width: 50%;
+  }
+
+  .bio-pic {
+    background-attachment: scroll;
+    float: right;
+    padding-top: 20em;
+    width: 40%;
+  }
+
+  .bio-pic2 {
+    float: left;
+    width: 40%;
   }
 
 }

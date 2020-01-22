@@ -2,7 +2,9 @@
 const mainBanner =document.querySelector('.main-banner');
 const navButton = document.querySelector('.nav-button');
 const mobileMenu = document.getElementById('menu');
+const navItem = document.querySelectorAll('.nav-item');
 const title = document.querySelector('.title');
+const bioPic2 = document.querySelector('.bio-pic2');
 
 //Function to show or hide menu bar depending on screen size
 function checkSize() {
@@ -54,6 +56,7 @@ function stickyNav(e) {
       mobileMenu.classList.remove('sticky-nav-bar');
     }
   }
+
 
 window.addEventListener('load', checkSize);
 
